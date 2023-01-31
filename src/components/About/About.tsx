@@ -1,6 +1,4 @@
 import { Container } from "./styles";
-import wordpress from "../../assets/wordpress.svg";
-import shopify from "../../assets/shopify.svg";
 import htmlIcon from "../../assets/html-icon.svg";
 import cssIcon from "../../assets/css-icon.svg";
 import sassIcon from "../../assets/sass-icon.svg";
@@ -8,96 +6,88 @@ import jsIcon from "../../assets/js-icon.svg";
 import nodeIcon from "../../assets/node-icon.svg";
 import reactIcon from "../../assets/react-icon.svg";
 import typescriptIcon from "../../assets/typescript-icon.svg";
-import vueIcon from "../../assets/vue-icon.svg";
 import boostrapIcon from "../../assets/bootstrap-icon.svg";
-import ScrollAnimation from "react-animate-on-scroll";
 import MohitKumar from "../../assets/Mohit.png";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 export function About() {
+  useEffect(() => {
+    AOS.init();
+    AOS.init({
+      useClassNames: true,
+      throttleDelay: 99,
+      startEvent: 'DOMContentLoaded'
+    });
+  }, []);
   return (
     <Container id="about">
       <div className="about-text">
-        <ScrollAnimation animateIn="fadeInLeft">
+        <div >
           <h2>About me</h2>
-        </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeInLeft" delay={0.1 * 1000}>
-          <p>
-          Hi there! I'm Mohit , a website developer with a passion for creating custom online experiences for my clients. With a skill set including HTML, CSS, JavaScript, and React, I have the tools to bring any website vision to life.
+        </div>
+        <div  >
+          <p  data-aos="fade-up-right" data-aos-duration="1500">
+          Hi there! I'm Mohit , Full Stack developer with a passion for creating custom online experiences for my clients. With a skill set including HTML5, CSS3, JavaScript,Node , React Native and React, I have the tools to bring any website vision to life.
           </p>
-        </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeInLeft" delay={0.2 * 1000} style={{ marginTop: "2rem", marginBottom: "2rem" }}>
-          <p>
+        </div>
+        {/* <div   style={{ marginTop: "2rem", marginBottom: "2rem" }}>
+          <p data-aos="fade-up-right" data-aos-duration="1500">
           But my services go beyond just custom development - I'm also proficient in using CMS systems like WordPress and Shopify, making it easy for my clients to take control of their own websites and keep them up to date.</p>
-        </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeInLeft" delay={0.3 * 1000}>
-          <p>
-          So if you're in need of a new website or just looking to revamp your current online presence, I'd love to chat and see how I can help. Let's bring your website dreams to reality together!</p>
-        </ScrollAnimation>
+        </div> */}
+        <div   style={{ marginTop: "2rem", marginBottom: "2rem" }}>
+          <p data-aos="fade-up-right" data-aos-duration="1500">
+          So if you're in need of a new website/Application or just looking to revamp your current online presence, I'd love to chat and see how I can help. Let's bring your website/Application dreams to reality together!</p>
+        </div>
 
-        <ScrollAnimation animateIn="fadeInLeft" delay={0.4 * 1000}>
-          <h3>Here are my main skills:</h3>
-        </ScrollAnimation>
-        <div className="hard-skills">
-
+        <div  >
+          <h3  data-aos="fade-up-left" data-aos-duration="1500">Here are my main skills:</h3>
+        </div>
+        <div className="hard-skills"  data-aos="fade-up" data-aos-duration="1500">
           <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.10 * 1000}>
-              <img src={wordpress} alt="Wordpress" />
-            </ScrollAnimation>
-          </div>
-          <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.12 * 1000}>
-              <img src={shopify} alt="shopify" />
-            </ScrollAnimation>
-          </div>
-          <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.13 * 1000}>
+            <div >
               <img src={reactIcon} alt="React" />
-            </ScrollAnimation>
+            </div>
           </div>
           <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.14 * 1000}>
+            <div >
               <img src={typescriptIcon} alt="Typescript" />
-            </ScrollAnimation>
+            </div>
           </div>
           <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.15 * 1000}>
-              <img src={vueIcon} alt="Vue" />
-            </ScrollAnimation>
-          </div>
-          <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.16 * 1000}>
+            <div >
               <img src={nodeIcon} alt="Node" />
-            </ScrollAnimation>
+            </div>
           </div>
           <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.17 * 1000}>
+            <div >
               <img src={htmlIcon} alt="Html" />
-            </ScrollAnimation>
+            </div>
           </div>
 
           <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.18 * 1000}>
+            <div >
               <img src={cssIcon} alt="Css" />
-            </ScrollAnimation>
+            </div>
           </div>
 
           <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.19 * 1000}>
+            <div >
               <img src={boostrapIcon} alt="bootstrap" />
-            </ScrollAnimation>
+            </div>
           </div>
           <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.19 * 1000}>
+            <div >
               <img src={jsIcon} alt="JavaScript" />
-            </ScrollAnimation>
+            </div>
           </div>
         </div>
       </div>
       <div className="about-image">
-        <ScrollAnimation animateIn="fadeInRight" delay={0.20 * 1000}>
-          <img src={MohitKumar} alt="Mohit Kumar" />
-        </ScrollAnimation>
+        <div  data-aos="fade-up-left" data-aos-duration="1500">
+          <img  src={MohitKumar} alt="Mohit Kumar" />
+        </div>
       </div>
     </Container>
   )

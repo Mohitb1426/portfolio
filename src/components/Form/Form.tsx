@@ -4,8 +4,17 @@ import { toast, ToastContainer } from 'react-toastify'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { useEffect, useState } from 'react'
 import validator from 'validator'
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export function Form() {
+  useEffect(() => {
+    AOS.init();
+    AOS.init({
+      useClassNames: true,
+      throttleDelay: 99,
+      startEvent: 'DOMContentLoaded'
+    });
+  }, []);
   const [state, handleSubmit] = useForm('xknkpqry')
 
   const [validEmail, setValidEmail] = useState(false)
@@ -48,10 +57,12 @@ export function Form() {
   }
 
   return (
-    <Container>
+    <Container style={{'marginTop': '8em'}}>
       <h2>Get in touch using the form</h2>
       <form onSubmit={handleSubmit}>
         <input
+         data-aos="fade-up-right" data-aos-duration="1500" 
+         style={{'marginTop':'2em'}}
           placeholder="Email"
           id="email"
           type="email"
@@ -63,6 +74,8 @@ export function Form() {
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
         <textarea
+         data-aos="fade-up-left" data-aos-duration="1500" 
+        style={{'marginTop':'1em'}}
           required
           placeholder="Send a message to get started."
           id="message"
@@ -77,16 +90,17 @@ export function Form() {
           errors={state.errors}
         />
         <ReCAPTCHA
+         data-aos="fade-down" data-aos-duration="1500" 
           sitekey="6Lfj9NYfAAAAAP8wPLtzrsSZeACIcGgwuEIRvbSg"
           onChange={(e) => {
             setIsHuman(true)
           }}
         ></ReCAPTCHA>
         <button
+         data-aos="fade-up" data-aos-duration="1500" 
           type="submit"
           disabled={state.submitting || !validEmail || !message || !isHuman}
         >
-
           Submit
         </button>
       </form>

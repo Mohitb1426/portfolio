@@ -8,33 +8,34 @@ import githubIcon from '../../assets/github.svg'
 import whatsapp from '../../assets/whatsapp.svg'
 import Hello from '../../assets/Hello.gif'
 import telegram from '../../assets/telegram.svg'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react"
+
 export function Hero() {
+  useEffect(() => {
+    AOS.init();
+    AOS.init({
+      useClassNames: true,
+      throttleDelay: 99,
+      startEvent: 'DOMContentLoaded'
+    });
+  }, []);
   return (
+
     <Container id="home">
       <div className="hero-text">
-        <ScrollAnimation animateIn="fadeInUp">
-          <p>Hello <img src={Hello} alt="Hello" width="20px"/>, I'm</p>
-        </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeInUp" delay={0.2 * 1000}>
-          <h1>Mohit Kumar</h1>
-        </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeInUp" delay={0.4 * 1000}>
-          <h3>Full Stack Developer</h3>
-        </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeInUp" delay={0.6 * 1000}>
-          <p className="small-resume">1 Years of Experience</p>
-        </ScrollAnimation>
-
-
-        <ScrollAnimation animateIn="fadeInUp" delay={0.8 * 1000}>
+          <p data-aos="fade-up-right" data-aos-duration="1500">Hello <img data-aos="fade-up-right" data-aos-duration="1500" src={Hello} alt="Hello" width="20px"/>, I'm</p>
+          <h1 data-aos="fade-up-right" data-aos-duration="1500">Mohit Kumar</h1>
+          <h3 data-aos="fade-up-right" data-aos-duration="1500">Full Stack Developer</h3>
+          <p data-aos="fade-up-right" data-aos-duration="1500" className="small-resume">1 Years of Experience</p>
           <BrowserRouter>
-            <NavHashLink smooth to="#contact" className="button">Contact</NavHashLink>
+            <NavHashLink data-aos="fade-up-right" data-aos-duration="1500" smooth to="#contact" className="button">Contact</NavHashLink>
           </BrowserRouter>
-        </ScrollAnimation>
-        
-        <ScrollAnimation animateIn="fadeInUp" delay={1 * 1000}>
-      <div className="social-media"><a
-        href="https://www.linkedin.com/in/"
+          <div>
+
+      <div className="social-media" data-aos="fade-up"><a
+        href="https://www.linkedin.com/in/mern-developer-mohit-kumar/"
         target="_blank"
         rel="noreferrer"
       >
@@ -48,23 +49,18 @@ export function Hero() {
           <img src={githubIcon} alt="GitHub" />
         </a>
         <a
-          // href="https://api.whatsapp.com/send/?phone=%2B919630576848&text=Hello+Vinayak"
+          href="https://api.whatsapp.com/"
           target="_blank"
           rel="noreferrer"
         >
           <img src={whatsapp} alt="Whatsapp" />
         </a></div>
-        </ScrollAnimation>
-
+        </div>
       </div>
-     
-
       <div className="hero-image">
-        <ScrollAnimation animateIn="fadeInRight" delay={1 * 1000}>
-          <img src={Illustration} alt="Ilustração" />
-        </ScrollAnimation>
+          <img data-aos="fade-up-left" data-aos-duration="1500" src={Illustration} alt="Ilustração" />
       </div>
-     
+
     </Container>
 
   )

@@ -11,55 +11,13 @@ import telegram from '../../assets/telegram.svg'
 export function Footer() {
   return (
     <Container className="footer">
-      <a href="/" className="logo">
-        <span>Mohit</span>
-        <span> Kumar</span>
-      </a>
-      <div>
+      <div style={{"display":"flex", "justifyContent":"center" , "alignItems" :"center"}}>
         <p>
-          This Website was made with <img src={reactIcon} alt="React" />
+       @2023 All Rights Reserved.Terms & Conditions | Privacy Policy <img src={reactIcon} alt="React" />
           {/* <span>❤️</span> */}
         </p>
       </div>
 
-      <div className="social-media">
-        <a
-          href="https://www.linkedin.com/in/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={linkedin} alt="Linkedin" />
-        </a>
-        <a
-          href="https://github.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={githubIcon} alt="GitHub" />
-        </a>
-        <a
-          href="https://api.whatsapp.com/send/?phone=%2B919630576848&text=Hello+"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={whatsapp} alt="Whatsapp" />
-        </a>
-        {/* <a
-          href="https://www.instagram.com"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={instagramIcon} alt="Instagram" />
-        </a> */}
-
-        {/* <a
-          href="https://discord.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={discordIcon} alt="Discord" />
-        </a> */}
-      </div>
     </Container>
   )
 }
