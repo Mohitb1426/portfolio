@@ -121,5 +121,7 @@ export const GlobalStyle = createGlobalStyle`
     // }
   }
   
-
+.kjLzBU{
+  overflow-x: unset;
+}
 `
